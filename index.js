@@ -6,8 +6,7 @@ var app = express();
 app.get('*', (req, res) => {
     axios.get('https://bikeindex.org' + req.url)
         .then(response => {
-            console.log('response', response);
-            res.json(response);
+            res.json(response.data);
         });
 });
 
