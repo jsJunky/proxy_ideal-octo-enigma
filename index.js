@@ -6,7 +6,7 @@ var app = express();
 app.use('/', proxy({
     target: 'http://bikeindex.org',
     onProxyRes(proxyResp) {
-        proxyRes.headers['Access-Control-Allow-Origin'] = '*';
+        proxyResp.headers['Access-Control-Allow-Origin'] = '*';
     },
     changeOrigin: true
 }));
