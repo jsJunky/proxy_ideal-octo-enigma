@@ -1,7 +1,10 @@
 const express = require('express');
-const axios = require('axios')
+const axios = require('axios');
+const cors = require('cors');
 
-var app = express();
+const app = express();
+
+app.use(cors());
 
 app.get('*', (req, res) => {
     axios.get('https://bikeindex.org' + req.url)
