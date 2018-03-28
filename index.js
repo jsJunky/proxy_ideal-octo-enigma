@@ -4,7 +4,7 @@ const axios = require('axios')
 var app = express();
 
 app.get('*', (req, res) => {
-    axios.get('https://bikeindex.org')
+    axios.get('https://bikeindex.org' + req.url)
         .then(response => {
             res.json(response);
         });
