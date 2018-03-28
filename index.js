@@ -7,7 +7,8 @@ app.use('/', proxy({
     target: 'http://bikeindex.org',
     onProxyRes(proxyResp) {
         proxyResp.headers['Access-Control-Allow-Origin'] = '*';
+        console.log('headers', proxyResp.headers);
     },
-    changeOrigin: true
+    changeOrigin: false
 }));
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
